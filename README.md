@@ -1,50 +1,44 @@
-# Welcome to your Expo app 👋
+# Proppy
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This document outlines the clean architecture structure of the Proppy application.
 
-## Get started
+## Project Structure
 
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
 ```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Proppy/
+├── app/                    # Expo Router screens (file-based routing)
+│   ├── _layout.tsx        # Root layout
+│   ├── index.tsx          # Entry point (redirects to login)
+│   └── login.tsx          # Login screen
+│
+├── src/                    # Source code
+│   ├── components/         # Reusable UI components
+│   │   ├── ui/            # Base UI components (Button, Input, etc.)
+│   │   └── index.ts       # Component exports
+│   │
+│   ├── config/            # Configuration files
+│   │   └── env.ts         # Environment variables
+│   │
+│   ├── constants/         # App-wide constants
+│   │   └── index.ts       # API endpoints, storage keys, validation rules
+│   │
+│   ├── themes/            # Theme configuration
+│   │   ├── colors.ts      # Color palette (light/dark)
+│   │   ├── typography.ts  # Font sizes, weights, families
+│   │   ├── spacing.ts     # Spacing values
+│   │   └── index.ts       # Theme exports
+│   │
+│   ├── types/             # TypeScript type definitions
+│   │   └── index.ts       # Shared types and interfaces
+│   │
+│   └── utils/             # Utility functions
+│       ├── validation.ts  # Form validation helpers
+│       ├── storage.ts     # AsyncStorage wrapper
+│       ├── helpers.ts     # General utility functions
+│       └── index.ts      # Utility exports
+│
+├── assets/                # Static assets (images, fonts, etc.)
+├── app.json               # Expo configuration
+├── package.json           # Dependencies
+└── tsconfig.json          # TypeScript configuration
+```
