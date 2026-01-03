@@ -36,3 +36,19 @@ export interface ApiError {
 
 export type ThemeMode = 'light' | 'dark' | 'auto';
 
+export interface Category {
+  id: string;
+  name: string;
+  icon: string;
+}
+
+export interface Property {
+  id: string;
+  name: string;
+  location: string;
+  price: string;
+  image: string;
+  bhk?: string;
+  sqft?: string;
+}
+

@@ -37,6 +37,8 @@ export const APP_CONSTANTS = {
   TOAST_DURATION: 3000,
 } as const;
 
+export * from './mockData';
+
 export default {
   API_ENDPOINTS,
   STORAGE_KEYS,

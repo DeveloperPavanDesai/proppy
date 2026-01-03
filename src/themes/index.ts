@@ -1,5 +1,5 @@
 export { Colors } from './colors';
-export type { ColorScheme } from './colors';
+export type { ColorPalette, ColorScheme } from './colors';
 export { Spacing } from './spacing';
 export { Typography } from './typography';
 

@@ -83,3 +83,4 @@ export const Colors = {
 } as const;
 
 export type ColorScheme = keyof typeof Colors;
+export type ColorPalette = typeof Colors.light | typeof Colors.dark;
