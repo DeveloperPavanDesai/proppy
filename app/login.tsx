@@ -18,7 +18,6 @@ import { Colors, Spacing, Typography } from '../src/themes';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
-// Import assets
 const avatarMain = require('../assets/images/Avatarmain.png');
 
 interface Category {
@@ -46,7 +45,6 @@ const CATEGORIES: Category[] = [
     { id: 'ready_to_move', name: 'Ready To Move', icon: '✅' },
 ];
 
-// Mock data - replace with actual API calls
 const MOCK_PROPERTIES: Property[] = [
     {
         id: '1',
@@ -78,7 +76,6 @@ export default function LoginScreen() {
 
     const handleSearch = () => {
         if (searchQuery.trim()) {
-            // Navigate to search results
             Alert.alert('Search', `Searching for: ${searchQuery}`);
         }
     };
@@ -110,7 +107,6 @@ export default function LoginScreen() {
                     contentContainerStyle={styles.scrollContent}
                     showsVerticalScrollIndicator={false}
                 >
-                    {/* Hero Section */}
                     <View style={styles.heroSection}>
                         <Image
                             source={{ uri: 'https://d2rkdaqkcawyx3.cloudfront.net/image/upload/v1761132546/home_desktop_trbcoq_rm6yqv.webp' }}
@@ -125,11 +121,8 @@ export default function LoginScreen() {
                             <Text style={styles.heroSubtitle}>
                                 Smartest end-to-end homebuying partner
                             </Text>
-
-                            {/* Chat Interface */}
                             <View style={styles.chatContainer}>
                                 <View style={[styles.chatBox, { backgroundColor: colors.background }]}>
-                                    {/* Proppy's Initial Message */}
                                     <View style={styles.chatMessage}>
                                         <Image
                                             source={avatarMain}
@@ -142,8 +135,6 @@ export default function LoginScreen() {
                                             </Text>
                                         </View>
                                     </View>
-
-                                    {/* Filter Buttons */}
                                     <View style={styles.filterContainer}>
                                         <TouchableOpacity style={[styles.filterButton, { backgroundColor: colors.backgroundSecondary }]}>
                                             <Text style={[styles.filterButtonText, { color: colors.text }]}>Locality</Text>
@@ -162,8 +153,6 @@ export default function LoginScreen() {
                                             <Text style={styles.filterIcon}>▼</Text>
                                         </TouchableOpacity>
                                     </View>
-
-                                    {/* Send Button */}
                                     <View style={styles.sendButtonContainer}>
                                         <TouchableOpacity
                                             style={[styles.sendButton, { backgroundColor: colors.primary }]}
@@ -172,15 +161,11 @@ export default function LoginScreen() {
                                             <Text style={styles.sendButtonText}>Send</Text>
                                         </TouchableOpacity>
                                     </View>
-
-                                    {/* OR Separator */}
                                     <View style={styles.separatorContainer}>
                                         <View style={styles.separatorLine} />
                                         <Text style={styles.separatorText}>OR</Text>
                                         <View style={styles.separatorLine} />
                                     </View>
-
-                                    {/* Suggestion Buttons */}
                                     <View style={styles.suggestionsContainer}>
                                         <TouchableOpacity 
                                             style={[styles.suggestionButton, { backgroundColor: colors.backgroundSecondary }]}
@@ -207,8 +192,6 @@ export default function LoginScreen() {
                                             </Text>
                                         </TouchableOpacity>
                                     </View>
-
-                                    {/* Search Input */}
                                     <View style={styles.searchInputContainer}>
                                         <Input
                                             placeholder="Try '2 BHK in Whitefield'"
@@ -229,8 +212,6 @@ export default function LoginScreen() {
                             </View>
                         </View>
                     </View>
-
-                    {/* Categories Section */}
                     <View style={styles.section}>
                         <Text style={[styles.sectionTitle, { color: colors.text }]}>Browse Categories</Text>
                         <ScrollView
@@ -252,8 +233,6 @@ export default function LoginScreen() {
                             ))}
                         </ScrollView>
                     </View>
-
-                    {/* Trending Projects Section */}
                     <View style={styles.section}>
                         <Text style={[styles.sectionTitle, { color: colors.text }]}>Trending Projects</Text>
                         <ScrollView
@@ -282,8 +261,6 @@ export default function LoginScreen() {
                             ))}
                         </ScrollView>
           </View>
-
-                    {/* Free Consultation Section */}
                     <View style={[styles.consultationSection, { backgroundColor: colors.backgroundSecondary }]}>
                         <Text style={[styles.consultationTitle, { color: colors.text }]}>
                             Get Free Consultation
@@ -298,10 +275,7 @@ export default function LoginScreen() {
                             <Text style={styles.consultationButtonText}>Schedule Call with Expert</Text>
             </TouchableOpacity>
           </View>
-
                 </ScrollView>
-                
-                {/* Floating Action Button - Call */}
                 <TouchableOpacity 
                     style={[styles.fab, { backgroundColor: colors.primary }]}
                     onPress={() => Alert.alert('Call', 'Calling property expert...')}
@@ -329,7 +303,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     scrollContent: {
-        paddingBottom: Spacing['3xl'] + 100, // Extra padding for FAB
+        paddingBottom: Spacing['3xl'] + 100,
     },
     heroSection: {
         paddingVertical: Spacing.xl,
